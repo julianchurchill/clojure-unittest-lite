@@ -1,6 +1,13 @@
 (ns unittest-lite
   (:require [unittest-lite.unittest]))
 
+(def bootstrap-tests [(check-equals-returns-true-for-two-equal-things)
+                      (failing-on-purpose)
+                      (check-equals-returns-success-message-for-two-equal-things)
+                      (check-equals-returns-false-for-two-unequal-things)
+                      (check-equals-returns-failure-message-for-two-unequal-things)])
+
+
 (defn check-equals-returns-true-for-two-equal-things []
   {:result (= true (:success (check-equals 1 1))),
    :message "check-equals-returns-true-for-two-equal-things"})
